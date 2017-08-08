@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Airs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Room</th>
+      <th>Room name</th>
+      <th>Location</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Accomodation</th>
+      <th>Bathrooms</th>
+      <th>Bedrooms</th>
+      <th>Beds</th>
+      <th>Room type</th>
+      <th>Is tv</th>
+      <th>Is air conditioning</th>
+      <th>Is laptop friendly workspace</th>
+      <th>Is washer</th>
+      <th>Is kitchen</th>
+      <th>Is wifi</th>
+      <th>Is family friendly</th>
+      <th>Is pool</th>
+      <th>Is gym</th>
+      <th>Is wheelchair accessible</th>
+      <th>Is pets allowed</th>
+      <th>House rules</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @airs.each do |air| %>
+      <tr>
+        <td><%= air.room_id %></td>
+        <td><%= air.room_name %></td>
+        <td><%= air.location %></td>
+        <td><%= air.description %></td>
+        <td><%= air.price %></td>
+        <td><%= air.accomodation %></td>
+        <td><%= air.bathrooms %></td>
+        <td><%= air.bedrooms %></td>
+        <td><%= air.beds %></td>
+        <td><%= air.room_type %></td>
+        <td><%= air.is_TV %></td>
+        <td><%= air.is_Air_Conditioning %></td>
+        <td><%= air.is_Laptop_friendly_workspace %></td>
+        <td><%= air.is_Washer %></td>
+        <td><%= air.is_Kitchen %></td>
+        <td><%= air.is_WiFi %></td>
+        <td><%= air.is_Family_friendly %></td>
+        <td><%= air.is_Pool %></td>
+        <td><%= air.is_Gym %></td>
+        <td><%= air.is_Wheelchair_accessible %></td>
+        <td><%= air.is_Pets_allowed %></td>
+        <td><%= air.house_rules %></td>
+        <td><%= link_to 'Show', air %></td>
+        <td><%= link_to 'Edit', edit_air_path(air) %></td>
+        <td><%= link_to 'Destroy', air, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Air', new_air_path %>
